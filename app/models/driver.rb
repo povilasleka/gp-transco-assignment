@@ -6,11 +6,11 @@ class Driver < ApplicationRecord
     validates :license_plate, presence: true
 
     def current_state
-        gps_entries.last.state
+        gps_entries&.last&.state
     end
 
     def current_time
-        gps_entries.last.state.current_time
+        gps_entries&.last&.state&.current_time
     end
 
     def send_weather_alerts
