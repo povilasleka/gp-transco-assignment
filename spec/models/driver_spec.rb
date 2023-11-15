@@ -1,7 +1,9 @@
 require 'rails_helper'
 
 RSpec.describe Driver, :type => :model do
-    let(:driver) { Driver.new(first_name: 'John', last_name: 'Doe', license_plate: 'ABC123') }
+    fixtures :drivers
+
+    let(:driver) { drivers(:driver1) }
 
     it 'is valid with valid attributes' do
         expect(driver).to be_valid
