@@ -71,3 +71,5 @@ group :test do
   gem "selenium-webdriver"
   gem 'webmock', '~> 3.19', '>= 3.19.1'
 end
+
+gem "whenever", "~> 1.0"
