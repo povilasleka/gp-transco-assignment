@@ -5,25 +5,9 @@ RSpec.describe Driver, :type => :model do
 
     let(:driver) { drivers(:driver1) }
 
-    it 'is valid with valid attributes' do
-        expect(driver).to be_valid
-    end
-
-    it 'becomes invalid without a first name' do
-        driver.first_name = nil
-
-        expect(driver).to_not be_valid
-    end
-
-    it 'becomes invalid without a last name' do
-        driver.last_name = nil
-
-        expect(driver).to_not be_valid
-    end
-
-    it 'becomes invalid without a license plate' do
-        driver.license_plate = nil
-
-        expect(driver).to_not be_valid
-    end
+    it { is_expected.to validate_presence_of :first_name }
+    it { is_expected.to validate_presence_of :last_name }
+    it { is_expected.to validate_presence_of :license_plate }
+    it { is_expected.to validate_presence_of :email }
+    it { is_expected.to validate_inclusion_of(:current_state_name).in_array(State::NAMES).allow_nil }
 end
