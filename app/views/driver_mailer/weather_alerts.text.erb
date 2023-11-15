@@ -1,0 +1,8 @@
+<% @alerts.each do |alert| %>
+  <%= alert.headline %>
+  ===============================
+  DESCRIPTION: <%= alert.description %>
+  INSTRUCTION: <%= alert.description %>
+  EFFECTIVE: <%= alert.effective %>
+  SEVERITY: <%= alert.severity %>
+<% end %>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+</head>
+<body>
+  <% @alerts.each do |alert| %>
+    <div style="margin-bottom: 20px; border: 1px solid #ccc; padding: 10px;">
+      <h2><%= alert.headline %></h2>
+      <hr>
+      <p><strong>Description:</strong> <%= alert.description %></p>
+      <p><strong>Instruction:</strong> <%= alert.instruction %></p>
+      <p><strong>Effective:</strong> <%= alert.effective %></p>
+      <p><strong>Severity:</strong> <%= alert.severity %></p>
+    </div>
+  <% end %>
+</body>
+</html>
