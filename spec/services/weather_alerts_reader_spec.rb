@@ -47,7 +47,7 @@ describe WeatherAlertsReader do
             end
 
             it 'raises a StandardError with an error message' do
-                expect { weather_service.read_alerts }.to raise_error(StandardError)
+                expect { weather_alerts_reader.read_alerts }.to raise_error(StandardError)
             end
         end
     end

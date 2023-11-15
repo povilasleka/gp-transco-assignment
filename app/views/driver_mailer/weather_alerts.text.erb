@@ -1,8 +1,10 @@
 <% @alerts.each do |alert| %>
   <%= alert.headline %>
   ===============================
+  AREA DESCRIPTION: <%= alert.area_desc %>
   DESCRIPTION: <%= alert.description %>
-  INSTRUCTION: <%= alert.description %>
+  INSTRUCTION: <%= alert.instruction %>
   EFFECTIVE: <%= alert.effective %>
   SEVERITY: <%= alert.severity %>
+  EXPIRES: <%= alert.expires %>
 <% end %>

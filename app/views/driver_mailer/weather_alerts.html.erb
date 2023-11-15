@@ -8,10 +8,12 @@
     <div style="margin-bottom: 20px; border: 1px solid #ccc; padding: 10px;">
       <h2><%= alert.headline %></h2>
       <hr>
+      <p><strong>Area Description:</strong> <%= alert.area_desc %></p>
       <p><strong>Description:</strong> <%= alert.description %></p>
       <p><strong>Instruction:</strong> <%= alert.instruction %></p>
       <p><strong>Effective:</strong> <%= alert.effective %></p>
       <p><strong>Severity:</strong> <%= alert.severity %></p>
+      <p><strong>Expires:</strong><%= alert.expires %></p>
     </div>
   <% end %>
 </body>
