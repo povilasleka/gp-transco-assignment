@@ -4,9 +4,15 @@ class State < ApplicationRecord
     validates :name, presence: true
     validates :timezone, presence: true
 
+    scope :by_local_time_hour, ->(hour) {
+        # This code retrieves all the states every time it runs,
+        # but as there is only 50 (fixed number) states, there is no problem.
+        all.select { |state| state.local_time.hour == hour.to_i }
+    }
+
     NAMES = %w[AL AK AZ AR CA CO CT DE FL GA HI ID IL IN IA KS KY LA ME MD MA MI MN MS MO MT NE NV NH NJ NM NY NC ND OH OK OR PA RI SC SD TN TX UT VT VA WA WV WI WY].freeze
 
-    def current_time
+    def local_time
         Time.now.in_time_zone(self.timezone)
     end
 
