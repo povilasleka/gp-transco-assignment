@@ -4,13 +4,18 @@ class Driver < ApplicationRecord
     validates :first_name, presence: true
     validates :last_name, presence: true
     validates :license_plate, presence: true
+    validates :current_state_name, inclusion: { in: State::NAMES }, allow_nil: true
 
     def current_state
-        gps_entries&.last&.state
+        return unless current_state_name.present?
+
+        State.find_by(name: current_state_name)
     end
 
     def current_time
-        gps_entries&.last&.state&.current_time
+        return unless current_state_name.present?
+        
+        State.find_by(name: current_state_name)&.current_time
     end
 
     def send_weather_alerts
