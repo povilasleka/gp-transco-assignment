@@ -52,9 +52,9 @@ states = [
 ]
 
 drivers = [
-    { first_name: "John", last_name: "Doe", license_plate: "ABC123" },
-    { first_name: "Jane", last_name: "Doe", license_plate: "XYZ789" },
-    { first_name: "Bob", last_name: "Smith", license_plate: "QWE456" },
+    { first_name: "John", last_name: "Doe", license_plate: "ABC123", email: "john.doe@gptransco.driver.com" },
+    { first_name: "Jane", last_name: "Doe", license_plate: "XYZ789", email: "jane.doe@gptransco.driver.com" },
+    { first_name: "Bob", last_name: "Smith", license_plate: "QWE456", email: "bob.smith@gptransco.driver.com" },
 ]
 
 gps_entries = [

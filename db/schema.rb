@@ -10,14 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2023_11_15_092905) do
+ActiveRecord::Schema[7.1].define(version: 2023_11_15_122609) do
   create_table "drivers", force: :cascade do |t|
-    t.string "first_name"
-    t.string "last_name"
-    t.string "license_plate"
+    t.string "first_name", limit: 50, null: false
+    t.string "last_name", limit: 50, null: false
+    t.string "license_plate", limit: 10, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "email"
+    t.string "email", limit: 62, null: false
     t.string "current_state_name", limit: 2
     t.index ["current_state_name"], name: "index_drivers_on_current_state_name", unique: true
   end
